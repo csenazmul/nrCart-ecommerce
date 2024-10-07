@@ -16,3 +16,7 @@ python manage.py startapp blog
     # vendor
     # customer
     # blog
+
+#Install and connect another module 
+    # anymail > https://pypi.org/project/django-anymail/
+    # django_recaptcha      > Django reCAPTCHA https://pypi.org/project/django-recaptcha/
