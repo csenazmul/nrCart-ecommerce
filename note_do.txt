@@ -20,3 +20,12 @@ python manage.py startapp blog
 #Install and connect another module 
     # anymail > https://pypi.org/project/django-anymail/
     # django_recaptcha      > Django reCAPTCHA https://pypi.org/project/django-recaptcha/
+
+# Create Templates folder and import os
+    # ecom_proj>settings.py 
+        # import os
+        # TEMPLATES = [
+    {
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],     
+    },
+]
