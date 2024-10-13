@@ -13,6 +13,7 @@
 .settings/
 .tox/
 __pycache__/
+__pycache__
 build/
 dist/
 env/

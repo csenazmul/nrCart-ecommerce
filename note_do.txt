@@ -53,3 +53,18 @@ DJANGO_SUPERUSER_PASSWORD=yourpassword \
 python manage.py createsuperuser --noinput
 change password: Admin123@!
 
+#Installation¶ =========================
+
+Install the latest pypi release with pip install -U django-jazzmin
+
+Add jazzmin to your INSTALLED_APPS before django.contrib.admin, and Voila!
+
+INSTALLED_APPS = [
+    'jazzmin',
+
+    'django.contrib.admin',
+    [...]
+]
+#=======================End
+
+# Environment Variables In Django: E-commerce Website using Django, EP 3
