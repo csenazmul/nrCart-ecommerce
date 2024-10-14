@@ -52,6 +52,13 @@ DJANGO_SUPERUSER_EMAIL=admin@example.com \
 DJANGO_SUPERUSER_PASSWORD=yourpassword \
 python manage.py createsuperuser --noinput
 change password: Admin123@!
+====================
+python manage.py createsuperuser
+DJANGO_SUPERUSER_USERNAME=admin \
+DJANGO_SUPERUSER_EMAIL=csenazmul@gmail.com \
+DJANGO_SUPERUSER_PASSWORD=Admin123@! \
+python manage.py createsuperuser --noinput
+change password: Admin123@!
 
 #Installation¶ =========================
 

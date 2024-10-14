@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
-from environ import Env
+from environs import Env
 
 env = Env()
 env.read_env()
@@ -144,6 +144,29 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 MEDIA_URL = "/media/" # website.com/media/
 
 MEDIA_ROOT = [BASE_DIR / 'media']
+
+AUTH_USER_MODEL = "userauths.User"
+
+
+# Stripe API Keys 
+STRIPE_PUBLIC_KEY = env("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
+
+# Paypal API Keys 
+PAYPAL_CLIENT_ID = env('PAYPAL_CLIENT_ID')
+PAYPAL_SECRET_ID = env('PAYPAL_SECRET_ID')
+
+# Flutterwave Keys
+FLUTTERWAVE_PUBLIC_KEY=env("FLUTTERWAVE_PUBLIC_KEY")
+FLUTTERWAVE_PRIVATE_KEY=env("FLUTTERWAVE_PRIVATE_KEY")
+
+# Paystack Keys
+PAYSTACK_PUBLIC_KEY=env("PAYSTACK_PUBLIC_KEY")
+PAYSTACK_PRIVATE_KEY=env("PAYSTACK_PRIVATE_KEY")
+
+# Razorpay keys
+RAZORPAY_KEY_ID=env("RAZORPAY_KEY_ID")
+RAZORPAY_KEY_SECRET=env("RAZORPAY_KEY_SECRET")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
