@@ -164,6 +164,11 @@ class Coupon(models.Model):
 class Order(models.Model):
     vendors = models.ManyToManyField(user_models.User, blank=True)
     customer = models.ForeignKey(user_models.User, on_delete=models.SET_NULL, null=True, related_name="customer", blank=True)
+    sub_total = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+    shipping = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+    tax = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+    service_fee = models.DecimalField(default=0.00, max_digits=12, decimal_places=2)
+    
 
 class OrderItem(models.Model):
     pass
