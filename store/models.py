@@ -168,7 +168,71 @@ class Order(models.Model):
     shipping = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
     tax = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
     service_fee = models.DecimalField(default=0.00, max_digits=12, decimal_places=2)
+    total = models.DecimalField(default=0.00, max_digits=12, decimal_places=2)
+    payment_status = models.CharField(max_length=100, choices=PAYMENT_STATUS, default="Processing")
+    payment_method = models.CharField(max_length=100, choices=PAYMENT_METHOD, default=None, null=True, blank=True)
+    order_status = models.CharField(max_length=100, choices=ORDER_STATUS, default="Pending")
+    initial_total = models.DecimalField(default=0.00, max_digits=12, decimal_places=2, help_text="The orginal total be")
+    saved = models.DecimalField(default=0.00, max_digits=12, decimal_places=2, null=True, blank=True, help_text="Amount")
+    # address = models.ForeignKey("customer.Address", on_delete=models.SET_NULL, null=True)
+    coupons = models.ManyToManyField(Coupon, blank=True)
+    order_id = ShortUUIDField(length=6, max_length=25, alphabet="1234567890")
+    payment_id = models.CharField(null=True, blank=True, max_length=1000)
+    date = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        verbose_name_plural = "Order"
+        ordering = ['-date']
+
+    def __str__(self):
+        return self.order_id
     
+    def order_items(self):
+        return OrderItem.objects.filter(order=self)
+
 
 class OrderItem(models.Model):
-    pass
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    order_status = models.CharField(max_length=100, choices=ORDER_STATUS, default="Pending")
+    shipping_service = models.CharField(max_length=100, choices=SHIPPING_SERVICE, default=None, null=True, blank=True)
+    tracking_id = models.CharField(max_length=100, default=None, null=True, blank=True)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    qty = models.IntegerField(default=0)
+    color = models.CharField(max_length=100, null=True, blank=True)
+    size = models.CharField(max_length=100, null=True, blank=True)
+    price = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+    sub_total = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+    shipping = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+    tax = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+    total = models.DecimalField(decimal_places=2, max_digits=12, default=0.00)
+
+    initial_total = models.DecimalField(decimal_places=2, max_digits=12, default=0.00, help_text="Grand Total of all amount")
+    saved = models.DecimalField(decimal_places=2, max_digits=12, default=0.00, null=True, blank=True, help_text="Amount save")
+    coupon = models.ManyToManyField(Coupon, blank=True)
+    applied_coupon = models.BooleanField(default=False)
+    item_id = ShortUUIDField(length=6, max_length=25, alphabet="1234567890")
+    vendor = models.ForeignKey(user_models.User, on_delete=models.SET_NULL, null=True, related_name="vendor_order_items")
+    date = models.DateTimeField(default=timezone.now)
+
+
+    def order_id(self):
+        return f"{self.order.order_id}"
+    
+    def __str__(self):
+        return self.item_id
+    
+    class Meta:
+        ordering = ['-date']
+
+
+class Review(models.Model):
+    user = models.ForeignKey(user_models.User, on_delete=models.SET_NULL, blank=True, null=True)
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True, related_name = "reviews")
+    review = models.TextField(null=True, blank=TabError)
+    replay = models.TextField(null=True, blank=True)
+    rating = models.IntegerField(choices=RATING, default=None)
+    active = models.BooleanField(default=False)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} review on {self.product.name}"
