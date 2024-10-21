@@ -70,7 +70,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
-    image = models.FileField(upload_to="images", blank=True, null=True, default="product.jpg")
+    image = models.ImageField(upload_to="images", blank=True, null=True)
     description = CKEditor5Field('Text', config_name='extends')
 
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
@@ -127,8 +127,12 @@ class VariantItem(models.Model):
 
 class Gallery(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
-    image = models.FileField(upload_to="images", default="gallery.jpg")
+    image = models.ImageField(upload_to="images")
     gallery_id = ShortUUIDField(length=6, max_length=10, alphabet="1234567890")
+
+    class Meta:
+        verbose_name_plural = "Gallery"
+
 
     def __str__(self):
         return f"{self.product.name} - image"
