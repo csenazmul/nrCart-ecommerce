@@ -1,0 +1,882 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta name="author" content="NREcommerce" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>E-commerce</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap%405.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    </head>
+
+    <body>
+        <div id="main-wrapper">
+            <div class="header header-dark dark-text">
+                <div class="container">
+                    <nav id="navigation" class="navigation navigation-landscape">
+                        <div class="nav-header">
+                            <a class="nav-brand" href="index.html">
+                                <img style="width: 170px; object-fit: contain;" src="{% static 'static/assets/img/logo.png' %}" class="logo" alt="" />
+                            </a>
+                            <div class="nav-toggle"></div>
+                            <div class="mobile_nav">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fas fa-search-alt"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fas fa-user"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="fas fa-heart text-white"></i><span class="dn-counter">2</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="cart/index.html"> <i class="fas fa-shopping-basket"></i><span class="dn-counter total_cart_items">0</span> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nav-menus-wrapper" style="transition-property: none">
+                            <ul class="nav-menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li>
+                                    <a href="shop/index.html">Shop</a>
+                                </li>
+                                 <li>
+                                    <a href="javascript:void(0);">Category</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        
+                                        
+                                            <li><a href="category/1/index.html">Electronics</a></li>
+                                        
+                                            <li><a href="category/2/index.html">Gadgets</a></li>
+                                        
+                                            <li><a href="category/3/index.html">Mobile</a></li>
+                                        
+                                            <li><a href="category/4/index.html">Computers</a></li>
+                                        
+                                            <li><a href="category/5/index.html">Camera</a></li>
+                                        
+                                            <li><a href="category/6/index.html">Tablets</a></li>
+                                        
+                                            
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Vendor</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><a href="vendor/dashboard/index.html">Dashboard</a></li>
+                                        <li><a href="vendor/products/index.html">Products</a></li>
+                                        <li><a href="vendor/create_product/index.html">Create Product</a></li>
+                                        <li><a href="vendor/orders/index.html">Orders</a></li>
+                                        <li><a href="vendor/coupons/index.html">Coupons</a></li>
+                                        <li><a href="vendor/notis/index.html">Notifications</a></li>
+                                        <li><a href="vendor/reviews/index.html">Reviews</a></li>
+                                        <li><a href="vendor/notis/index.html">Notis</a></li>
+                                        <li><a href="vendor/profile/index.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Customer</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><a href="customer/dashboard/index.html">Dashboard</a></li>
+                                        <li><a href="customer/orders/index.html">Orders</a></li>
+                                        <li><a href="customer/wishlist/index.html">Wishlist</a></li>
+                                        <li><a href="customer/addresses/index.html">Address</a></li>
+                                        <li><a href="customer/notis/index.html">Notifications</a></li>
+                                        <li><a href="customer/profile/index.html">Profile</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Pages</a>
+                                    <ul class="nav-dropdown nav-submenu">
+                                        <li><a href="blog/index.html">Blog</a></li>
+                                        <li><a href="about/index.html">About Us</a></li>
+                                        <li><a href="contact/index.html">Contact</a></li>
+                                        <li><a href="faqs/index.html">FAQs</a></li>
+                                        <li><a href="privacy_policy/index.html">Privacy Policy</a></li>
+                                        <li><a href="terms_conditions/index.html">Terms and Conditions</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="order_tracker_page/index.html">Track Order <i class="fas fa-truck ms-1"></i></a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav-menu nav-menu-social align-to-right">
+                                <li>
+                                    <a href="shop/index.html"><i class="fas fa-search text-white"></i></a>
+                                </li>
+                               
+                               
+                                
+                                <li>
+                                    <a href="cart/index.html"><i class="fas fa-shopping-basket text-white"></i><span class="dn-counter total_cart_items">0</span> </a>
+                                </li>
+                                
+                                
+                                    <li>
+                                        <a href="auth/sign-in/index.html" class="btn bg-primary py-2 px-4 rounded text-white">Sign In <i class="fas fa-sign-in-alt ms-1"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="auth/sign-up/index.html" class="btn bg-primary py-2 px-4 rounded text-white">Sign Up <i class="fas fa-user-plus ms-1"></i></a>
+                                    </li>
+                                
+                                    
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+           
+           
+            
+
+            
+<section class="p-0 pb-5 mb-5">
+    <div class="container">
+
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-lg-7 p-4 rounded-3 bg-white">
+                <p class="text-secondary fs-4 mb-0 mt-5 mb-3">20% OFF Today Only! <img src="{% static '../cdn-icons-png.flaticon.com/128/9004/9004955.png' %}" width="30" alt=""></p>
+                <h1 class="display-4 fw-bold">Everything Tech, <span class="text-success"> <br> Best Prices <br><span class="text-dark">& Free Delivery</span></span></h1>
+                <p class="text-secondary fs-6 mt-4">Welcome to FastCart, shop faster, easier, securely, with good deals, customer support, fast refunds and many more amazing features that awaits you!</p>
+                <div class="d-flex align-items-center gap-2 mt-5">
+                    <div class="d-flex align-items-center border  rounded-3 bg-light  w-75" s>
+                        <input type="text" class="form-control shadow-none border-0 bg-transparent" placeholder="Search Item" name="" id="" />
+                    </div>
+                    <a href="shop/index.html" class="btn bg-primary  text-white rounded "> <i class="fas fa-search text-white"></i></a>
+                </div>
+                <div class="d-flex justify-content-start gap-4 align-items-center mt-3">
+                    <p class="text-secondary">Free Delivery Today Only! <b>Terms & Confitions</b>Apply </p>
+                </div>
+                <div class="d-flex align-items-center justify-content-start gap-5 fs-5 text-secondary mt-2">
+                    <i class="fab text-success fa-shopify"></i>
+                    <i class="fab fa-amazon"></i>
+                    <i class="fab text-success fa-ebay"></i>
+                    <i class="fab text-success fa-alipay"></i>
+                    <i class="fab fa-google"></i>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <img class="img-fluid rounded-3 w-100" style="height: 500px; width: 100%; object-fit: contain" src="{% static 'assets/img/home-hero.jpg' %}" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="middle mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="sec_title position-relative text-center">
+                    <h1 class="ft-bold pt-3">Trending Categories <img src="{% static '../cdn-icons-png.flaticon.com/128/7183/7183999.png' %}" width="40" alt=""></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center justify-content-center">
+            
+            
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-4">
+                <div class="cats_side_wrap text-center mx-auto mb-3">
+                    <div class="sl_cat_01">
+                        <div class="d-inline-flex align-items-center justify-content-center p-4 circle mb-2 border">
+                            <a href="category/1/index.html" class="d-block">
+                                
+                                
+                                <img src="{% static 'media/images/1200_1200-27_ec9f26b9-dda0-459f-9eb0-aa70d325e5b9_360x_ayicKjE.png' %}" class="img-fluid" width="80" alt="" />
+                                
+                                    
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sl_cat_02">
+                        <h6 class="m-0 ft-medium fs-sm"><a href="category/1/index.html">Electronics</a></h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-4">
+                <div class="cats_side_wrap text-center mx-auto mb-3">
+                    <div class="sl_cat_01">
+                        <div class="d-inline-flex align-items-center justify-content-center p-4 circle mb-2 border">
+                            <a href="category/2/index.html" class="d-block">
+                                
+                                
+                                <img src="{% static 'media/images/studio-1_24jrFVU.jpg' %}" class="img-fluid" width="80" alt="" />
+                                
+                                    
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sl_cat_02">
+                        <h6 class="m-0 ft-medium fs-sm"><a href="category/2/index.html">Gadgets</a></h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-4">
+                <div class="cats_side_wrap text-center mx-auto mb-3">
+                    <div class="sl_cat_01">
+                        <div class="d-inline-flex align-items-center justify-content-center p-4 circle mb-2 border">
+                            <a href="category/3/index.html" class="d-block">
+                                
+                                
+                                <img src="{% static 'media/images/1200_1200-12_af221d4c-5108-47ef-bb61-ae896e0e3f01_360x_KKpdvYp.png' %}" class="img-fluid" width="80" alt="" />
+                                
+                                    
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sl_cat_02">
+                        <h6 class="m-0 ft-medium fs-sm"><a href="category/3/index.html">Mobile</a></h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-4">
+                <div class="cats_side_wrap text-center mx-auto mb-3">
+                    <div class="sl_cat_01">
+                        <div class="d-inline-flex align-items-center justify-content-center p-4 circle mb-2 border">
+                            <a href="category/4/index.html" class="d-block">
+                                
+                                
+                                <img src="{% static 'media/images/MacBook-Air-13-inch-M3-Space-Gray-1-square_medium_8f4mxfu.jpg' %}" class="img-fluid" width="80" alt="" />
+                                
+                                    
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sl_cat_02">
+                        <h6 class="m-0 ft-medium fs-sm"><a href="category/4/index.html">Computers</a></h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-4">
+                <div class="cats_side_wrap text-center mx-auto mb-3">
+                    <div class="sl_cat_01">
+                        <div class="d-inline-flex align-items-center justify-content-center p-4 circle mb-2 border">
+                            <a href="category/5/index.html" class="d-block">
+                                
+                                
+                                <img src="{% static 'media/images/3_e91a9142-8cc8-4ed7-aa91-509a622f11f2_360x_7O8ux21.png' %}" class="img-fluid" width="80" alt="" />
+                                
+                                    
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sl_cat_02">
+                        <h6 class="m-0 ft-medium fs-sm"><a href="category/5/index.html">Camera</a></h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-6 col-4">
+                <div class="cats_side_wrap text-center mx-auto mb-3">
+                    <div class="sl_cat_01">
+                        <div class="d-inline-flex align-items-center justify-content-center p-4 circle mb-2 border">
+                            <a href="category/6/index.html" class="d-block">
+                                
+                                
+                                <img src="{% static 'media/images/1200_1200-29_4bb9defb-c4d0-49f0-8960-e570ad2653c6_360x_tTOHiE8.png' %}" class="img-fluid" width="80" alt="" />
+                                
+                                    
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sl_cat_02">
+                        <h6 class="m-0 ft-medium fs-sm"><a href="category/6/index.html">Tablets</a></h6>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+        </div>
+    </div>
+</section>
+
+<section class="middle mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="sec_title position-relative text-center">
+                    <h1 class="ft-bold pt-3">Popular Products <img src="{% static '../cdn-icons-png.flaticon.com/128/785/785116.png' %}" width="40" alt=""></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center rows-products">
+             
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/beats-speaker-j8/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-25_ee0c5425-81a2-41ae-86d0-cf326db90580_1100x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/1/index.html">Electronics</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/beats-speaker-j8/index.html">Beats Speaker</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$100.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="21">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="21"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/jbl-extreme-3-speaker-wt/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/jbl-extreme-3-speaker.jpg' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/1/index.html">Electronics</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/jbl-extreme-3-speaker-wt/index.html">JBL EXTREME 3 SPEAKER</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$670.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="20">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="20"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/macbook-pro-16-inch-apple-m3-max-dp/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/MacBook_Pro_16_in_M3_Pro_Max_Space_Black_PDP_Image_Position-1__WWEN_de97454c-5c5_oM7gnLl.webp' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/4/index.html">Computers</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/macbook-pro-16-inch-apple-m3-max-dp/index.html">MacBook Pro 16-inch | Apple M3 Max</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$2990.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="19">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="19"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/beats-studio-buds-em/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/studio-1.jpg' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/2/index.html">Gadgets</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/beats-studio-buds-em/index.html">Beats Studio Buds</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$200.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="18">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="18"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/logitech-mevo-speaker-bp/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200_e60fec98-14d7-4b8d-a0c5-d711effd643b_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/5/index.html">Camera</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/logitech-mevo-speaker-bp/index.html">Logitech Mevo Speaker</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$170.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="17">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="17"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/ipad-pro-apple-jz/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-4_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/6/index.html">Tablets</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/ipad-pro-apple-jz/index.html">Ipad Pro | Apple</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$1750.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="16">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="16"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/ipad-pro-apple-ct/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-29_4bb9defb-c4d0-49f0-8960-e570ad2653c6_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/6/index.html">Tablets</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/ipad-pro-apple-ct/index.html">Ipad Pro | Apple</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$1450.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="15">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="15"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/xbox-game-controller-sr/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-15_dee7eb87-9ecb-4117-8cce-b2b8feac7a22_535x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/2/index.html">Gadgets</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/xbox-game-controller-sr/index.html">XBox Game Controller</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$100.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="14">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="14"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/samsung-vision-pro-nh/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-29_75b6d9e8-8273-4fbe-821c-20f21b15be2c_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/2/index.html">Gadgets</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/samsung-vision-pro-nh/index.html">Samsung Vision Pro</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$300.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="13">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="13"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/iphone-15-pro-max-ex/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-12_af221d4c-5108-47ef-bb61-ae896e0e3f01_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/3/index.html">Mobile</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/iphone-15-pro-max-ex/index.html">Iphone 15 Pro max </a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$800.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="12">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="12"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/iphone-13-pro-max-eu/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-1_ce07dbcd-242e-4c63-bf2f-8ec9269e692d_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/3/index.html">Mobile</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/iphone-13-pro-max-eu/index.html">Iphone 13 Pro max </a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$920.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="11">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="11"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/samsung-gear-camera-gh/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-8_8cd14cfa-49d5-44bd-94a0-9449242f77aa_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/5/index.html">Camera</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/samsung-gear-camera-gh/index.html">Samsung Gear Camera</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$610.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="10">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="10"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/nikon-d200-camera-u7/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/5_89f43b83-408c-4c02-bd34-e475b08e43db_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/5/index.html">Camera</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/nikon-d200-camera-u7/index.html">Nikon D&amp;200 Camera</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$2100.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="9">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="9"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/samsung-galaxy-a33-dw/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-4_0fde0abd-41b6-4288-ba2f-47d385cd2a3f_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/3/index.html">Mobile</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/samsung-galaxy-a33-dw/index.html">Samsung Galaxy A33 </a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$1100.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="8">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="8"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/samsung-galaxy-s10-plus-4m/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-16_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/3/index.html">Mobile</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/samsung-galaxy-s10-plus-4m/index.html">Samsung Galaxy S10 Plus</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$10.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="7">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="7"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-lg-3 mb-3">
+                    <div class="product_grid card b-0  rounded-3 shadow m-2 p-2">
+                        <div class="card-body p-0">
+                            <div class="shop_thumb position-relative">
+                                <a class="card-img-top d-block overflow-hidden" href="detail/omega-deville-watch-pro-5d/index.html"><img class="card-img-top" style="width: 100%; height: 230px; object-fit: cover;" src="{% static 'media/images/1200_1200-27_ec9f26b9-dda0-459f-9eb0-aa70d325e5b9_360x.png' %}" alt="..." /></a>
+                            </div>
+                        </div>
+                        <div class="card-footer b-0 p-0 pt-2 bg-white d-flex align-items-start justify-content-between">
+                            <div class="text-left">
+                                <div class="text-left">
+                                    <div class="elso_titl"><span class="small"><a href="category/2/index.html">Gadgets</a></span></div>
+                                    <h5 class="fs-md mb-0 lh-1 mb-1"><a href="detail/omega-deville-watch-pro-5d/index.html">Omega Deville Watch Pro</a></h5>
+                                        <div class="star-rating align-items-center d-flex justify-content-left mb-2 p-0 mt-3">
+                                        
+                                        <i class="fas fa-star text-warning"></i>
+                                        <i class="fas fa-star text-warning"></i>
+                                        
+                                    </div>
+                                    <div class="elis_rty"><span class="ft-bold text-dark fs-sm">$33.00</span></div>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                        <button type="button" class="btn btn-sm bg-primary text-white rounded add_to_cart" data-id="6">Add to cart <i class="fas fa-shopping-cart ms-2"></i></button>
+                                        <input type="hidden" class="quantity" value="1" name="" id="">
+                                        <a href="#" class="add_to_wishlist" data-product_id="6"><i class="fas fa-heart fs-4 text-black"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="position-relative text-center">
+                    <a href="shop/index.html" class="btn bg-dark text-light rounded btn-sm mt-5">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+            <footer class="dark-footer skin-dark-footer" style="margin-top: 500px">
+                <div class="footer-middle">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-4 col-md-3 col-sm-12">
+                                <div class="footer_widget">
+                                    <img src="{% static 'static/assets/img/logo-light.html' %}" class="img-footer small mb-2" alt="" />
+
+                                    <div class="address mt-3">123 Main Street ST <br />United States 324235</div>
+                                    <div class="address mt-3">+123 (456) 7890<br />info@ecommerce.com</div>
+                                    <div class="address mt-3">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-4 col-md-2 col-sm-12">
+                                <div class="footer_widget">
+                                    <h4 class="widget_title">Supports</h4>
+                                    <ul class="footer-menu">
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">About Page</a></li>
+                                        <li><a href="#">FAQ's Page</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Terms and Conditions</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-4 col-md-3 col-sm-12">
+                                <div class="footer_widget">
+                                    <h4 class="widget_title">Subscribe</h4>
+                                    <p>Receive updates, hot deals, discounts sent straignt in your inbox daily</p>
+                                    <div class="foot-news-last">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Email Address" />
+                                            <div class="input-group-append">
+                                                <button type="button" class="input-group-text b-0 text-light"><i class="fas fa-arrow-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="{% static 'static/assets/js/jquery.min.js' %}"></script>
+        <script src="{% static 'static/assets/js/popper.min.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="{% static 'static/assets/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'static/assets/js/ion.rangeSlider.min.js' %}"></script>
+        <script src="{% static 'static/assets/js/slick.js' %}"></script>
+        <script src="{% static 'static/assets/js/slider-bg.js' %}"></script>
+        <script src="{% static 'static/assets/js/lightbox.js' %}"></script>
+        <script src="{% static 'static/assets/js/smoothproducts.js' %}"></script>
+        <script src="{% static 'static/assets/js/snackbar.min.js' %}"></script>
+        <script src="{% static 'static/assets/js/jQuery.style.switcher.js' %}"></script>
+        <script src="{% static 'static/assets/js/custom.js' %}"></script>
+        <script src="{% static 'static/assets/js/function.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    </body>
+
+</html>
