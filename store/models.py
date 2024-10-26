@@ -98,6 +98,21 @@ class Product(models.Model):
     def __str__(self):
         return self.name
     
+    def average_rating(self):
+        return Review.objects.filter(product=self).aggregate(avg_rating=models.Avg('rating'))['avg_rating']
+    
+    def reviews(self):
+        return Review.objects.filter(product=self)
+    
+    def gallery(self):
+        return Gallery.objects.filter(product=self)
+    
+    def variants(self):
+        return Variant.objects.filter(product=self)
+    
+    def vendor_orders(self):
+        return OrderItem.objects.filter(product=self, vendor=self.vendor)
+    
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name) + "-" + str(shortuuid.uuid().lower()[:2])

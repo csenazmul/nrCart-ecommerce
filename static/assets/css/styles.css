@@ -944,9 +944,13 @@ html body .text-themecolor {
 /*-------------- GLobal Settings: Background Colors ----------------*/
 
 .bg-primary {
-    background-color: #5b1cee !important;
+    background-color: #52AD29 !important;
     color: #fff;
 }
+/* .bg-primary {
+    background-color: #5b1cee !important;
+    color: #fff;
+} */
 
 .bg-success {
     background-color: #1cee5b !important;
