@@ -753,8 +753,11 @@ div[data-overlay] p {
     color: #ff9b20 !important;
 }
 
-.text-success {
+/* .text-success {
     color: #5b1cee !important;
+} */
+.text-success {
+    color: rgb(25, 142, 88) !important
 }
 
 .text-info {

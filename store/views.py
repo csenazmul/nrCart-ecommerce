@@ -8,5 +8,17 @@ from store import models as store_models
 
 def index(request):
     products = store_models.Product.objects.filter(status="Published")
-    print(products)
-    return render(request, "store/index.html", {"products":products})
+    context = {
+        "products": products 
+    }
+    return render(request, "store/index.html", context)
+
+def product_detail(request, slug):
+    product = store_models.Product.objects.get(status="Published", slug=slug)
+    related_product = store_models.Product.objects.filter(category=product.category, status="Published").exclude(id=product.id)
+
+    context = {
+        "product": product,
+        "related_product": related_product, 
+    }
+    return render(request, "store/product_detail.html", context)
